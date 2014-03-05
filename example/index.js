@@ -6,7 +6,8 @@ var http    = require("http"),
 var app     = express(),
     server  = http.createServer(app);
 
-app.use(express.bodyParser());
+app.use(express.json());
+app.use(express.urlencoded());
 
 app.use("/", express.static(__dirname));
 
@@ -21,4 +22,3 @@ server.listen(function() {
   var address = server.address();
   console.log("listening on http://%s:%d", address.address, address.port);
 });
-
