@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EasySSE example</title>
+    <style type="text/css">
+      #messages {
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Server-Sent Events</h1>
+    <div id="messages"></div>
+
+    <script>
+
+      var messages = document.getElementById("messages");
+
+      var source = new EventSource("/event-stream");
+
+      source.addEventListener("message", function(msg) {
+        var p = document.createElement("p");
+        p.innerHTML = msg.data;
+        messages.appendChild(p);
+      });
+
+    </script>
+
+  </body>
+</html>

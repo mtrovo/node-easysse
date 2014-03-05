@@ -1,0 +1,27 @@
+{
+  "name": "easysse",
+  "version": "0.0.0",
+  "description": "Server Sent Events, sincerely, most definitely",
+  "main": "lib/easysse.js",
+  "scripts": {
+    "test": "mocha -R spec",
+    "example": "node ./example"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mosdefbiz/node-easysse.git"
+  },
+  "keywords": [
+    "sse",
+    "json"
+  ],
+  "author": "nkitsune <nkitsune@mosdef.biz>",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/mosdefbiz/node-easysse/issues"
+  },
+  "homepage": "https://github.com/mosdefbiz/node-easysse",
+  "devDependencies": {
+    "express": "^3.4.8"
+  }
+}
