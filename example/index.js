@@ -6,15 +6,16 @@ var http    = require("http"),
 var app     = express(),
     server  = http.createServer(app);
 
-app.get("/", function(req, res) {
-  res.sendfile(path.join(__dirname, "index.html"));
+app.use(express.bodyParser());
+
+app.use("/", express.static(__dirname));
+
+app.get("/chat-events", easysse);
+
+app.post("/chat", function(req, res) {
+  console.log("chat post event", req.body);
+  easysse.emit("chat", req.body.username, req.body.message);
 });
-
-app.get("/event-stream", easysse);
-
-setInterval(function() {
-  easysse.emit("foo", 1, 2, 3);
-}, 1000);
 
 server.listen(function() {
   var address = server.address();

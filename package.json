@@ -4,7 +4,7 @@
   "description": "Server Sent Events, sincerely, most definitely",
   "main": "lib/easysse.js",
   "scripts": {
-    "test": "mocha -R spec",
+    "test": "echo no tests available yet && exit 1",
     "example": "node ./example"
   },
   "repository": {
