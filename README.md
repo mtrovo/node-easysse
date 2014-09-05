@@ -28,7 +28,7 @@ Usage
 Currently easysse is configured as an express middleware
 
 ```js
-var require("easysse");
+var easysse = require("easysse");
 app.get("/chat-stream", easysse);
 
 app.post("/chat", function(req, res) {
